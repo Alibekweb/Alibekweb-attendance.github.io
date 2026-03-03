@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Davomat Pro | Final Edition</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-shell" id="appShell">
+        <aside class="sidebar">
+            <div class="sidebar-wrapper">
+                <div class="sidebar-header">
+                    <div class="brand">📊 <span>Davomat.io</span></div>
+                    <button class="toggle-btn" onclick="toggleSidebar()">❮</button>
+                </div>
+                
+                <div class="nav-content">
+                    <div class="nav-section">
+                        <label>Asosiy</label>
+                        <div class="control-group">
+                            <small>Guruh</small>
+                            <select id="groupSelect"></select>
+                        </div>
+                        <div class="control-group">
+                            <small>Sana</small>
+                            <input type="month" id="monthPicker">
+                        </div>
+                    </div>
+
+                    <div class="nav-section border-top">
+                        <label>Sozlamalar</label>
+                        <button class="btn-action secondary" onclick="addNewGroup()">+ Yangi guruh</button>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <main class="content">
+            <header class="header">
+                <div class="header-left">
+                    <button class="open-btn" onclick="toggleSidebar()">☰</button>
+                    <div>
+                        <h2 id="currentGroupName">Guruh nomi</h2>
+                        <p id="statsDisplay">Statistika yuklanmoqda...</p>
+                    </div>
+                </div>
+            </header>
+
+            <div class="table-card">
+                <div class="table-scroll">
+                    <table id="attendanceTable"></table>
+                </div>
+            </div>
+
+            <button class="fab-add" onclick="openAddModal()" title="O'quvchi qo'shish">
+                <span>+</span>
+            </button>
+        </main>
+    </div>
+
+    <div class="modal" id="addModal">
+        <div class="modal-content">
+            <h3>Yangi o'quvchi</h3>
+            <input type="text" id="newName" placeholder="Familiya va Ism">
+            <div class="modal-footer">
+                <button class="m-btn m-cancel" onclick="closeAddModal()">Bekor qilish</button>
+                <button class="m-btn m-confirm" id="saveStudentBtn">Qo'shish</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
