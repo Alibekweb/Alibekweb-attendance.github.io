@@ -5,7 +5,7 @@ const shell = document.getElementById("appShell");
 const modal = document.getElementById("addModal");
 
 let groups = JSON.parse(localStorage.getItem("groups")) || {
-    "Backend": [{ id: 1, ism: "Alimov Jasur" }, { id: 2, ism: "Zokirov Olim" }]
+    "AXV3": [{ id: 1, ism: "Jumanazarov Alibek" }, { id: 2, ism: "Xudoyberganov Asror" }]
 };
 
 const save = () => localStorage.setItem("groups", JSON.stringify(groups));
